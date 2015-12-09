@@ -33,7 +33,7 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        //app.receivedEvent('deviceready');
+        app.receivedEvent('deviceready');
 		app.init();
     },
     // Update DOM on a Received Event
@@ -73,6 +73,7 @@ function onNotificationGCM(e) {
         case 'registered':
             if (e.regid.length > 0){
                 alert(e.regid);
+				document.getElementById('deviceready').querySelector('.received').innerHTML(e.regid);
             }
         break;
 
