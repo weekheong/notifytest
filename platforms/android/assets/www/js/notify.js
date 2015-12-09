@@ -72,7 +72,7 @@ function onNotificationGCM(e) {
     switch(e.event){
         case 'registered':
             if (e.regid.length > 0){
-                deviceRegistered(e.regid);
+                alert(e.regid);
             }
         break;
 
